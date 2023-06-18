@@ -1,8 +1,9 @@
 # Sofo
 ### 찬양팀 세션들을 위한 커뮤니케이션 솔루션
 ###### “ 찬양팀 세션들이 편하게 소통할 수 있도록 돕는 것이 목표입니다. “
+###### Sofo Homepage : sofomusic.com
 
 ## Sample Image
 
 
-![53CA4EF2-0419-43A3-9B49-52CCCFBBE745](https://github.com/c-peace/Sofo-Project/assets/85606158/ce27f6fd-fb83-4b95-9d01-99f01b4acf9c)
+![스크린샷, 2023-06-18 16-17-18](https://github.com/c-peace/Sofo2.0/assets/85606158/197ae860-f22d-47b9-80f6-887d9c98493c)
