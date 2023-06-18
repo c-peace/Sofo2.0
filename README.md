@@ -2,6 +2,7 @@
 ### 찬양팀 세션들을 위한 커뮤니케이션 솔루션
 ###### “ 찬양팀 세션들이 편하게 소통할 수 있도록 돕는 것이 목표입니다. “
 ###### Sofo Homepage : https://sofomusic.com
+###### Sofo Score : https://score.sofomusic.com
 
 ## Sample Image
 
