@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="Sofo/style.css" rel="stylesheet" />
+    <link href="Sofo/Assets/Sofo.png" rel="shortcut icon" type="image/x-icon">
+    <title>Sofo</title>
+
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELRYNM6ZE8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ELRYNM6ZE8');
+    </script> -->
+
+  </head>
+
+  <body>
+    <!-- modal page -->
+    <div id="modal" onclick="backScreen()">
+      <div id="modal_body">
+        <img src="" alt="미리보기" id="canvasFullscreen" />
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- side bar -->
+      <div id="sidebar">
+        <div>
+          <h1 id="logo" onclick="removeSlides()">Sofo</h1>
+          <p id="version">2.0</p>
+        </div>
+        <div id="link_box">
+          <h1 class="link_item" onclick="btn_home()">Home</h1>
+          <h1 class="link_item" onclick="btn_sample()">Sample</h1>
+          <h1 class="link_item" onclick="btn_feedback()">Feed Back</h1>
+          <h1 class="link_item">Tutorial</h1>
+        </div>
+        <h3 id="developer">Choi peace</h3>
+      </div>
+
+      <!-- workspace -->
+      <div id="workspace">
+        <div id="canvasBox">
+
+          <input type="number" class="canvasBtn" id="info_num" min="1" max="20" value="1" onchange="drawInfoNum(value)">
+
+          <div class="dropdown canvasBtn forward_dropdown" id="info_key">
+            <div class="dropdown-content-row" id="dropdown_songform">
+              <option class="option-row-small" value="C" onclick="drawInfoKey(value)">C</option>
+              <option class="option-row-small" value="Db" onclick="drawInfoKey(value)">Db</option>
+              <option class="option-row-small" value="D" onclick="drawInfoKey(value)">D</option>
+              <option class="option-row-small" value="Eb" onclick="drawInfoKey(value)">Eb</option>
+              <option class="option-row-small" value="E" onclick="drawInfoKey(value)">E</option>
+              <option class="option-row-small" value="F" onclick="drawInfoKey(value)">F</option>
+              <option class="option-row-small" value="Gb" onclick="drawInfoKey(value)">Gb</option>
+              <option class="option-row-small" value="G" onclick="drawInfoKey(value)">G</option>
+              <option class="option-row-small" value="Ab" onclick="drawInfoKey(value)">Ab</option>
+              <option class="option-row-small" value="A" onclick="drawInfoKey(value)">A</option>
+              <option class="option-row-small" value="Bb" onclick="drawInfoKey(value)">Bb</option>
+              <option class="option-row-small" value="B" onclick="drawInfoKey(value)">B</option>
+              <option class="option-row-small" value="Cm" onclick="drawInfoKey(value)">Cm</option>
+              <option class="option-row-small" value="Dbm" onclick="drawInfoKey(value)">Dbm</option>
+              <option class="option-row-small" value="Dm" onclick="drawInfoKey(value)">Dm</option>
+              <option class="option-row-small" value="Ebm" onclick="drawInfoKey(value)">Ebm</option>
+              <option class="option-row-small" value="Em" onclick="drawInfoKey(value)">Em</option>
+              <option class="option-row-small" value="Fm" onclick="drawInfoKey(value)">Fm</option>
+              <option class="option-row-small" value="Gbm" onclick="drawInfoKey(value)">Gbm</option>
+              <option class="option-row-small" value="Gm" onclick="drawInfoKey(value)">Gm</option>
+              <option class="option-row-small" value="Abm" onclick="drawInfoKey(value)">Abm</option>
+              <option class="option-row-small" value="Am" onclick="drawInfoKey(value)">Am</option>
+              <option class="option-row-small" value="Bbm" onclick="drawInfoKey(value)">Bbm</option>
+              <option class="option-row-small" value="Bm" onclick="drawInfoKey(value)">Bm</option>
+            </div>
+          </div>
+          
+          <input type="number" class="canvasBtn" id="info_tempo" min="40" max="240" value="110" onchange="drawInfoTempo(value)">
+
+          <div class="canvasBtn" id="info_sheet" onclick="inputInfoSheet()"></div>
+
+          <div class="dropdown canvasBtn" id="songform">
+            <div class="dropdown-content-row">
+              <option class="option-row-big" value="In" title="Intro" onclick="drawSongform(value)">In</option>
+              <option class="option-row-big" value="A" title="A part" onclick="drawSongform(value)">A</option>
+              <option class="option-row-big" value="B" title="B part" onclick="drawSongform(value)">B</option>
+              <option class="option-row-big" value="I" title="Interlude" onclick="drawSongform(value)">I</option>
+              <option class="option-row-big" value="C" title="C part" onclick="drawSongform(value)">C</option>
+              <option class="option-row-big" value="D" title="D part" onclick="drawSongform(value)">D</option>
+              <option class="option-row-big" value="O" title="Outro" onclick="drawSongform(value)">O</option>
+              <option class="option-row-big" title="Reset" onclick="resetSonform()">Reset</option>
+            </div>
+          </div>
+
+          <label for="upload">
+            <div class="canvasBtn" id="image">Image</div>
+            <input type="file" accept="image/*" id="upload" style="display: none;"/>
+          </label>
+
+          <div class="dropdown canvasBtn" id="flag">
+            Flag
+            <div class="dropdown-content-column">
+              <option class="option-column" value="In" title="Intro" onclick="createFlag(value)">In</option>
+              <option class="option-column" value="A" title="A part" onclick="createFlag(value)">A</option>
+              <option class="option-column" value="B" title="B part" onclick="createFlag(value)">B</option>
+              <option class="option-column" value="I" title="Interlude" onclick="createFlag(value)">I</option>
+              <option class="option-column" value="C" title="C part" onclick="createFlag(value)">C</option>
+              <option class="option-column" value="D" title="D part" onclick="createFlag(value)">D</option>
+              <option class="option-column" value="O" title="Outro" onclick="createFlag(value)">O</option>
+              <option class="option-column" title="Reset" onclick="resetFlag()">Reset</option>
+            </div>
+          </div>
+          <canvas id="canvasFlag"></canvas>
+          <canvas id="canvasMain"></canvas>
+          <canvas id="canvasSubmit"></canvas>
+        </div>
+        <div id="item_btnbox">
+          <h1 class="btn" onclick="btn_view()">View</h1>
+          <h1 class="btn" onclick="btn_save()">Save</h1>
+          <h1 class="btn" onclick="startForm()">Reset</h1>
+        </div>
+      </div>
+
+      <!-- slidebox -->
+      <div id="slidebox">
+        <img src="Sofo/Assets/addSlide.png" id="addSlide" onclick="controlSlide(id)">
+      </div>
+    </div>
+
+    <script type="text/javascript" src="Sofo/tools.js"></script>
+  </body>
+</html>
