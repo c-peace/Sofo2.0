@@ -447,3 +447,19 @@ canvas {
     transform: scale(98%);
     box-shadow: 0px 0px 0px 2px #fc5050;
 }
+
+@media (max-width: 1080px) {
+
+    #sidebar {
+        display: none;
+    }
+
+    #workspace {
+        width: 100vw;
+    }
+
+    #slidebox {
+        display: none;
+    }
+
+}
