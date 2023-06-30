@@ -20,6 +20,14 @@
   </head>
 
   <body>
+
+    <div id="inform_modal">
+      <div id="inform">
+        <img src="Sofo/Assets/inform.png">
+        <h1 onclick="closeInform()">OK</h1>
+      </div>
+    </div>
+
     <!-- modal page -->
     <div id="modal" onclick="backScreen()">
       <div id="modal_body">
@@ -38,7 +46,7 @@
           <h1 class="link_item" onclick="btn_home()">Home</h1>
           <h1 class="link_item" onclick="btn_sample()">Sample</h1>
           <h1 class="link_item" onclick="btn_feedback()">Feed Back</h1>
-          <h1 class="link_item">Tutorial</h1>
+          <h1 class="link_item" onclick="btn_tutorial()">Tutorial</h1>
         </div>
         <h3 id="developer">Choi peace</h3>
       </div>

@@ -431,6 +431,11 @@ function backScreen() {
     modal.style.display = 'none';
 }
 
+function closeInform() {
+    const inform = document.querySelector('#inform_modal');
+    inform.style.display = 'none';
+}
+
 // download
 function btn_save() {
     combineCanvas();
@@ -447,13 +452,19 @@ function btn_save() {
 
 // btn Box url
 function btn_home() {
-    window.open('https://sofomusic.com');
+    alert('준비중');
+    // window.open('https://sofomusic.com');
 }
 
 function btn_sample() {
-    window.open('https://sofomusic.com');
+    alert('준비중');
+    // window.open('https://sofomusic.com');
 }
 
 function btn_feedback() {
     window.open('https://docs.google.com/forms/d/e/1FAIpQLSegiRFCoM7ZomJR2cIKwV1h_4cxyggZgjNm6Y59r9K8qtfl5A/viewform?usp=sf_link');
+}
+
+function btn_tutorial() {
+    alert('준비중');
 }
