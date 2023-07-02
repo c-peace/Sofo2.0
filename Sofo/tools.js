@@ -452,13 +452,11 @@ function btn_save() {
 
 // btn Box url
 function btn_home() {
-    alert('준비중');
-    // window.open('https://sofomusic.com');
+    window.open('https://sofomusic.oopy.io/');
 }
 
 function btn_sample() {
-    alert('준비중');
-    // window.open('https://sofomusic.com');
+    window.open('https://sofomusic.oopy.io/');
 }
 
 function btn_feedback() {
@@ -466,5 +464,6 @@ function btn_feedback() {
 }
 
 function btn_tutorial() {
-    alert('준비중');
+    const inform = document.querySelector('#inform_modal');
+    inform.style.display = 'flex';
 }
