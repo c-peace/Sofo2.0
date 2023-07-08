@@ -115,11 +115,11 @@ function loadImage(event) {
     image.onload = function () {
         clearImage();
         // set image size
-        let imageHeight = (canvas.height - 166) * 98 / 100;
+        let imageHeight = (canvas.height - 166) * 96 / 100;
         let imageWidth = image.width * imageHeight / image.height;
 
-        if (imageWidth > canvas.width * 98 / 100) {
-            imageWidth = canvas.width * 98 / 100;
+        if (imageWidth > canvas.width * 96 / 100) {
+            imageWidth = canvas.width * 96 / 100;
             imageHeight = image.height * imageWidth / image.width;
         }
 
@@ -456,7 +456,7 @@ function btn_home() {
 }
 
 function btn_sample() {
-    window.open('https://sofomusic.oopy.io/');
+    window.open('https://sofomusic.oopy.io/sample');
 }
 
 function btn_feedback() {
@@ -464,6 +464,5 @@ function btn_feedback() {
 }
 
 function btn_tutorial() {
-    const inform = document.querySelector('#inform_modal');
-    inform.style.display = 'flex';
+    window.open('https://sofomusic.oopy.io/guide');
 }
