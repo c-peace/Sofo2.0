@@ -452,11 +452,11 @@ function btn_save() {
 
 // btn Box url
 function btn_home() {
-    window.open('https://sofomusic.oopy.io/');
+    window.open('https://intro.sofomusic.com/');
 }
 
 function btn_sample() {
-    window.open('https://sofomusic.oopy.io/sample');
+    window.open('https://intro.sofomusic.com/sample');
 }
 
 function btn_feedback() {
@@ -464,5 +464,5 @@ function btn_feedback() {
 }
 
 function btn_tutorial() {
-    window.open('https://sofomusic.oopy.io/guide');
+    window.open('https://intro.sofomusic.com/guide');
 }
