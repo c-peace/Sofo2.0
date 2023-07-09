@@ -166,8 +166,8 @@ function createFlag(name) {
     flags.push({
         x: Math.floor(Math.random() * 951) + 120,
         y: Math.floor(Math.random() * 100) + 1500,
-        width: 54,
-        height: 54,
+        width: 50,
+        height: 50,
         strokeStyle: "red",
         fillStyle: "white",
         name: name,
@@ -189,8 +189,8 @@ function rect(r) {
     // text
     ctxFlag.textAlign = 'center';
     ctxFlag.fillStyle = r.strokeStyle;
-    ctxFlag.font = '40px Arial';
-    ctxFlag.fillText(r.name, r.x + 27, r.y + 41);
+    ctxFlag.font = '37px Arial';
+    ctxFlag.fillText(r.name, r.x + 25, r.y + 39);
     ctxFlag.restore();
 }
 
