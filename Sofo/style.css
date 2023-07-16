@@ -41,7 +41,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
-    z-index: 5;
+    z-index: 6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -218,7 +218,7 @@
     display: none;
     position: absolute;
     background-color: var(--color-sidebar);
-    bottom: 25px;
+    bottom: calc(25 / 969 * 100vh);
     border-radius: 4px;
 }
 
@@ -227,7 +227,7 @@
     position: relative;
     font-weight: bold;
     background-color: var(--color-sidebar);
-    top: 24px;
+    top: calc(24 / 969 * 100vh);
     border-radius: 6px;
     width: 460px;
 }
