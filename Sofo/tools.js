@@ -25,6 +25,22 @@ canvasBox.addEventListener('click', () => {
     saveSheet();
 });
 
+const songform = document.getElementById('songform');
+const flag = document.getElementById('flag');
+const guidebox = document.querySelector('.guidebox');
+flag.addEventListener('mouseover', () => {
+    guidebox.style.opacity = 1;
+});
+flag.addEventListener('mouseout', () => {
+    guidebox.style.opacity = 0;
+});
+songform.addEventListener('mouseover', () => {
+    guidebox.style.opacity = 1;
+});
+songform.addEventListener('mouseout', () => {
+    guidebox.style.opacity = 0;
+});
+
 // Info Music
 function drawInfoNum(value) {
     ctx.beginPath();
