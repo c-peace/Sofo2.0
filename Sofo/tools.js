@@ -29,12 +29,14 @@ const songform = document.getElementById('songform');
 const flag = document.getElementById('flag');
 const guidebox = document.querySelector('.guidebox');
 flag.addEventListener('mouseover', () => {
+    guidebox.style = "bottom: calc(20 / 969 * 100vh);"
     guidebox.style.opacity = 1;
 });
 flag.addEventListener('mouseout', () => {
     guidebox.style.opacity = 0;
 });
 songform.addEventListener('mouseover', () => {
+    guidebox.style = "top: calc(140 / 969 * 100vh);"
     guidebox.style.opacity = 1;
 });
 songform.addEventListener('mouseout', () => {
