@@ -124,6 +124,16 @@ function resetSonform() {
     ctx.fillText("In - A - B - I - A - B - B - C - D - O", 595, 155);
 }
 
+function eraseSongform() {
+    list_Songform.pop();
+    ctx.fillStyle = 'white';
+    ctx.fillRect(200, 120, 900, 40);
+    ctx.textAlign = 'center';
+    ctx.font = 'bold 28px Arial';
+    ctx.fillStyle = '#e42e2e';
+    ctx.fillText(list_Songform.join(" - "), 595, 155);
+}
+
 // load Music Score
 function loadImage(event) {
     const file = event.target.files[0];
@@ -174,6 +184,12 @@ let flags = [];
 function resetFlag() {
     clearCanvasFlag();
     flags.length = 0;
+}
+
+function eraseFlag() {
+    clearCanvasFlag();
+    flags.pop();
+    draw();
 }
 
 function clearCanvasFlag() {
