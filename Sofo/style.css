@@ -106,7 +106,7 @@
 
 /* about SideBar */
 #sidebar {
-    width: 274px;
+    width: 266px;
     height: 100vh;
     background-color: var(--color-sidebar);
     text-align: center;
@@ -170,7 +170,7 @@
 
 /* about WorkSpace */
 #workspace {
-    width: calc(100% - 454px);
+    width: calc(100% - 446px);
     height: 100vh;
     overflow: hidden;
     display: flex;
