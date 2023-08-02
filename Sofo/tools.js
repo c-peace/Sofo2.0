@@ -29,18 +29,16 @@ const songform = document.getElementById('songform');
 const flag = document.getElementById('flag');
 const guidebox = document.querySelector('.guidebox');
 flag.addEventListener('mouseover', () => {
-    guidebox.style = "bottom: calc(10 / 969 * 100vh);"
-    guidebox.style.opacity = 1;
+    guidebox.style = "bottom: calc(80 / 969 * 100vh); display: block;"
 });
 flag.addEventListener('mouseout', () => {
-    guidebox.style.opacity = 0;
+    guidebox.style = "display: none;"
 });
 songform.addEventListener('mouseover', () => {
-    guidebox.style = "top: calc(60 / 969 * 100vh); "
-    guidebox.style.opacity = 1;
+    guidebox.style = "top: calc(60 / 969 * 100vh); display: block;"
 });
 songform.addEventListener('mouseout', () => {
-    guidebox.style.opacity = 0;
+    guidebox.style = "display: none;"
 });
 
 // Info Music
@@ -242,8 +240,8 @@ function myDown(e) {
     e.stopPropagation();
 
     // get the current mouse position
-    const mx = (e.offsetX / ((window.innerHeight * 595) / 969)) * canvasFlag.width;
-    const my = (e.offsetY / ((window.innerHeight * 842) / 969)) * canvasFlag.height;
+    const mx = (e.offsetX / ((window.innerHeight * 93 / 100) / 842 * 595)) * canvasFlag.width;
+    const my = (e.offsetY / (window.innerHeight * 93 / 100)) * canvasFlag.height;
 
     // test each shape to see if mouse is inside
     dragok = false;
@@ -289,8 +287,8 @@ function myMove(e) {
         e.stopPropagation();
 
         // get the current mouse position
-        const mx = (e.offsetX / ((window.innerHeight * 595) / 969)) * canvasFlag.width;
-        const my = (e.offsetY / ((window.innerHeight * 842) / 969)) * canvasFlag.height;
+        const mx = (e.offsetX / ((window.innerHeight * 93 / 100) / 842 * 595)) * canvasFlag.width;
+        const my = (e.offsetY / (window.innerHeight * 93 / 100)) * canvasFlag.height;
 
         // calculate the distance the mouse has moved
         // since the last mousemove
