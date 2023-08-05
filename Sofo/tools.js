@@ -9,7 +9,6 @@ function startForm() {
     const image = new Image();
     image.src = '../Sofo/Assets/defaultSheet.png';
     image.onload = function () {
-        imageInput.value = '';
         ctx.drawImage(image, 0, 0);
         resetFlag();
         resetInfoMusic();
@@ -27,18 +26,27 @@ canvasBox.addEventListener('click', () => {
 
 const songform = document.getElementById('songform');
 const flag = document.getElementById('flag');
-const guidebox = document.querySelector('.guidebox');
+const RTguideBox = document.getElementById('RTguideBox');
 flag.addEventListener('mouseover', () => {
-    guidebox.style = "bottom: calc(80 / 969 * 100vh); display: block;"
+    RTguideBox.style = "bottom: calc(80 / 969 * 100vh); display: block;"
 });
 flag.addEventListener('mouseout', () => {
-    guidebox.style = "display: none;"
+    RTguideBox.style = "display: none;"
 });
 songform.addEventListener('mouseover', () => {
-    guidebox.style = "top: calc(60 / 969 * 100vh); display: block;"
+    RTguideBox.style = "top: calc(60 / 969 * 100vh); display: block;"
 });
 songform.addEventListener('mouseout', () => {
-    guidebox.style = "display: none;"
+    RTguideBox.style = "display: none;"
+});
+
+const imgBtn = document.getElementById('image');
+const IMGguideBox = document.getElementById('IMGguideBox');
+imgBtn.addEventListener('mouseover', () => {
+    IMGguideBox.style = "bottom: calc(80 / 969 * 100vh); display: block;"
+});
+imgBtn.addEventListener('mouseout', () => {
+    IMGguideBox.style = "display: none;"
 });
 
 // Info Music
@@ -84,7 +92,7 @@ function resetInfoMusic() {
 // Info Sheet
 function drawInfoSheet(value) {
     ctx.fillStyle = 'white';
-    ctx.fillRect(800,40,1134,73);
+    ctx.fillRect(800, 40, 1134, 73);
     ctx.fillStyle = '#000000';
     ctx.textAlign = 'right';
     ctx.font = 'bold 20px Arial';
@@ -93,7 +101,7 @@ function drawInfoSheet(value) {
 
 function inputInfoSheet() {
     let today = new Date();
-    let info = prompt("악보 정보를 입력하세요.",today.toLocaleDateString());
+    let info = prompt("악보 정보를 입력하세요.", today.toLocaleDateString());
     if (info != null) {
         drawInfoSheet(info);
     }
@@ -132,10 +140,61 @@ function eraseSongform() {
     ctx.fillText(list_Songform.join(" - "), 595, 155);
 }
 
+// Image Copy & Paste
+window.addEventListener("paste", pasteImage);
+
+async function pasteImage() {
+    try {
+        const permission = await navigator.permissions.query({
+            name: "clipboard-read",
+        });
+        if (permission.state === "denied") {
+            throw new Error("Not allowed to read clipboard.");
+        }
+        const clipboardContents = await navigator.clipboard.read();
+        for (const item of clipboardContents) {
+            if (!item.types.includes("image/png")) {
+                throw new Error("Clipboard contains non-image data.");
+            }
+            const blob = await item.getType("image/png");
+            pasteCheck = confirm('이미지를 "Sofo Score"에 붙여넣으시겠습니까?');
+            if (pasteCheck == true) {
+                loadImage(URL.createObjectURL(blob));
+            }
+        }
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
+window.addEventListener("copy", copyCanvasContentsToClipboard);
+
+function copyCanvasContentsToClipboard() {
+    combineCanvas();
+    canvasSubmit.toBlob((blob) => {
+        let data = [new ClipboardItem({ [blob.type]: blob })];
+
+        navigator.clipboard.write(data).then(
+            () => {
+                alert('"Sofo Score" 이미지 복사 완료!')
+            },
+            (err) => {
+                alert(err);
+            },
+        );
+    });
+}
+  
+
+
 // load Music Score
-function loadImage(event) {
+function SearchImage(event) {
     const file = event.target.files[0];
     const url = URL.createObjectURL(file);
+    loadImage(url);
+};
+
+function loadImage(url) {
     const image = new Image();
     image.src = url;
     image.onload = function () {
@@ -152,14 +211,15 @@ function loadImage(event) {
         ctx.drawImage(image, (canvas.width - imageWidth) / 2, (166 + canvas.height - imageHeight) / 2, imageWidth, imageHeight);
         saveSheet();
     };
-};
+    imageInput.value = '';
+}
 
 function clearImage() {
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 170, canvas.width, canvas.height)
 }
 
-imageInput.addEventListener('change', loadImage);
+imageInput.addEventListener('change', SearchImage);
 
 
 // Draw Flag
@@ -254,11 +314,11 @@ function myDown(e) {
             mx < s.x + s.width &&
             my > s.y &&
             my < s.y + s.height
-          ) {
+        ) {
             // if yes, set that rects isDragging=true
             dragok = true;
             s.isDragging = true;
-          }
+        }
     }
     // save the current mouse position
     startX = mx;

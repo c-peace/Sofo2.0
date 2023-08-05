@@ -74,6 +74,7 @@
     background-color: #e9dfff;
 }
 
+
 /* about Modal */
 #modal {
     position: absolute;
@@ -219,16 +220,33 @@
     transition: all 150ms;
 }
 
-#guideBox p {
+#RTguideBox p {
     margin-top: 8px;
     font-size: calc(15 / 969 * 100vh);
 }
 
-#guideBox h3 {
+#RTguideBox h3 {
     font-size: calc(16 / 969 * 100vh);
 }
 
-#guideBox h5 {
+#RTguideBox h5 {
+    font-weight: normal;
+    margin-top: 6px;
+    font-size: calc(12 / 969 * 100vh);
+    font-weight: bold;
+    color: #333333;
+}
+
+#IMGguideBox p {
+    margin-top: 8px;
+    font-size: calc(15 / 969 * 100vh);
+}
+
+#IMGguideBox h3 {
+    font-size: calc(16 / 969 * 100vh);
+}
+
+#IMGguideBox h5 {
     font-weight: normal;
     margin-top: 6px;
     font-size: calc(12 / 969 * 100vh);
