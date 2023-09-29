@@ -323,11 +323,11 @@
     background-color: var(--color-sizebar);
 }
 
-.dropdown:hover .dropdown-content-column{
+.dropdown:hover > .dropdown-content-column{
     display: block;
 }
 
-.dropdown:hover .dropdown-content-row {
+.dropdown:hover > .dropdown-content-row {
     display: flex;
     flex-wrap: wrap;
 }
